@@ -1,0 +1,109 @@
+<%- include('./partials/header') %>
+
+<div class="container ">
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-6 col-lg-8">
+                    <div class="card-body pb-1 pb-sm-0">
+                        <h1>Update</h1>
+                        <p>
+                            (leave field empty, if you don't want to change)
+                        </p>
+                        <form>
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+  
+                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter New Name">
+  
+                                <small id="name" class="form-text text-muted">Previous Name: <%= c.name %></small>
+                            </div>
+                            <br>
+
+                            <div class="form-group">
+                                <label for="mobile number">Mobile number</label>
+  
+                                <input type="text" class="form-control" id="mobile" aria-describedby="emailHelp" placeholder="Enter New mobile number">
+  
+                                <small id="mobile" class="form-text text-muted">Previous Mobile: <%= c.mobile %></small>
+                            </div>
+
+                            <br>
+
+                            <div class="form-group">
+                              <label for="email">Email address</label>
+
+                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter New email">
+
+                              <small id="emailHelp" class="form-text text-muted">Previous: <%= c.email %></small>
+                            </div>
+
+                            <br>
+
+                            <!-- <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div> -->
+
+
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender">
+                                <option>male</option>
+                                <option>female</option>
+                                <option>other</option>
+                            </select>
+                            <small id="gender" class="form-text text-muted">Previous: <%= c.gender %></small>
+
+                            <br><br>
+
+                            <label for="relation">Relation</label>
+                            <select class="form-control" id="relation">
+                                <option>Father</option>
+                                <option>Mother</option>
+                                <option>Brother</option>
+                                <option>Sister</option>
+                                
+                            </select>
+                            <small id="relation" class="form-text text-muted">Previous: <%= c.relation %></small>
+                            
+                            <br>
+                            <br>
+
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+    <%- include('./partials/footer') %>
+<!-- <div class="f">
+    <p class="card-text">
+        <%= c.name %>
+    </p>
+    <a class="btn btn-info btn-sm" href="/update/<%= c.id %>+n">Update</a>
+
+    <p class="card-text">
+        <%= c.mobile %>
+    </p>
+    <a class="btn btn-info btn-sm" href="/update/<%= c.id %>+m">Update</a>
+
+    <p class="card-text">
+        <%= c.gender %>
+    </p>
+    <a class="btn btn-info btn-sm" href="/update/<%= c.id %>+g">Update</a>
+
+    <p class="card-text">
+        <%= c.relation %>
+    </p>
+    <a class="btn btn-info btn-sm" href="/update/<%= c.id %>+r">Update</a>
+
+    <p class="card-text">
+        <%= c.email %>
+    </p>
+    <a class="btn btn-info btn-sm" href="/update/<%= c.id %>+e">Update</a>
+</div> -->

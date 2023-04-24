@@ -10,6 +10,10 @@
                             <b><%= c.name %></b>
                         </h5>
                         <p class="card-text">
+                            <b>Id: </b>
+                            <%= c.id %>
+                        </p>
+                        <p class="card-text">
                             <%= c.mobile %>
                         </p>
                         <p class="card-text">
@@ -21,8 +25,8 @@
                         <p class="card-text">
                             <%= c.email %>
                         </p>
-                        <a class="btn btn-info btn-sm" href="/update/<%= c._id %>">Update</a>
-                        <a class="btn btn-info btn-sm" href="/delete/<%= c._id %>">Delete</a>
+                        <a class="btn btn-info btn-sm" href="/update/<%= c.id %>">Update</a>
+                        <a class="btn btn-info btn-sm" href="/delete/<%= c.id %>">Delete</a>
                     </div>
                 </div>
             </div>
