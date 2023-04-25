@@ -1,20 +1,16 @@
 <%- include('./partials/header') %>
 
-<div class="container ">
-        <div class="card mb-3">
-            <div class="row">
-                <div class="col-md-6 col-lg-8">
-                    <div class="card-body pb-1 pb-sm-0">
+
                         <h1>Update</h1>
                         <p>
-                            (leave field empty, if you don't want to change)
+                            <!-- (leave field empty, if you don't want to change) -->
                         </p>
-                        <form>
+<form action="/updated/<%= c.id %>" method="POST">
 
                             <div class="form-group">
                                 <label for="name">Name</label>
   
-                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter New Name">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter New Name">
   
                                 <small id="name" class="form-text text-muted">Previous Name: <%= c.name %></small>
                             </div>
@@ -23,7 +19,7 @@
                             <div class="form-group">
                                 <label for="mobile number">Mobile number</label>
   
-                                <input type="text" class="form-control" id="mobile" aria-describedby="emailHelp" placeholder="Enter New mobile number">
+                                <input type="text" name="mobile" class="form-control" id="mobile" pattern="[0-9]{10}" placeholder="Enter New mobile number">
   
                                 <small id="mobile" class="form-text text-muted">Previous Mobile: <%= c.mobile %></small>
                             </div>
@@ -33,7 +29,7 @@
                             <div class="form-group">
                               <label for="email">Email address</label>
 
-                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter New email">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Enter New email">
 
                               <small id="emailHelp" class="form-text text-muted">Previous: <%= c.email %></small>
                             </div>
@@ -47,7 +43,7 @@
 
 
                             <label for="gender">Gender</label>
-                            <select class="form-control" id="gender">
+                            <select class="form-control" id="gender" name="gender">
                                 <option>male</option>
                                 <option>female</option>
                                 <option>other</option>
@@ -57,7 +53,7 @@
                             <br><br>
 
                             <label for="relation">Relation</label>
-                            <select class="form-control" id="relation">
+                            <select class="form-control" id="relation" name="relation">
                                 <option>Father</option>
                                 <option>Mother</option>
                                 <option>Brother</option>
@@ -71,14 +67,9 @@
 
 
                             <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
-                        </form>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>
+                          
+</form>
+
 
     <%- include('./partials/footer') %>
 <!-- <div class="f">

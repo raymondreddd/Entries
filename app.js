@@ -9,7 +9,7 @@ const port = 3000;
 const app = express()
 
 // always code
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //register view-engine
@@ -101,8 +101,19 @@ app.post('/submit-form', (req, res) => {
     
 });
 
-app.post('/update', (req, res) => {
-    const { name, mobile,relation,  gender, email } = req.body;
+app.post('/updated/:id', (req, res) => {
+    console.log(req.body);
+    const {name, mobile, relation,  gender, email} = req.body
+    const id = req.params.id
+
+    console.log("body",req.body);
+    const sql = `update entries set name = '${name}', mobile = '${mobile}', relation = '${relation}', gender = '${gender}', email = '${email}' where id = '${id}'`
+    console.log(sql);
+    const query = db.query(sql, (err, result) => {
+        if(err)res.render('error', {err})
+        console.log(result);
+        res.redirect('/view')
+    })
 })
 
 app.get('/update/:ref', (req, res, err) => {
